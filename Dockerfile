@@ -18,6 +18,6 @@ RUN drush core-status
 ENV JAVA_HOME=/usr
 RUN apk add --update --no-cache openjdk7-jre-base \
   && rm -rf /var/lib/apt/lists/* \
-  && git clone https://github.com/aroq/druflow.git \
+  && git clone --branch=v0.1.3 --depth=1 --single-branch https://github.com/aroq/druflow.git \
   && cd druflow \
   && ./gradlew assemble
